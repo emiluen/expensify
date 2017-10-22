@@ -9,9 +9,9 @@ if (process.env.NODE_ENV === 'test') {
   require('dotenv').config({ path: '.env.test' });
 } else if (process.env.NODE_ENV === 'production' || 'development') {
   console.log(process.env.NODE_ENV);
+  require('dotenv').config({ path: '.env.development' });
   console.log(process.env.FIREBASE_API_KEY);
   console.log(process.env.FIREBASE_DATABASE_URL);
-  require('dotenv').config({ path: '.env.development' });
 }
 
 module.exports = (env) => {
