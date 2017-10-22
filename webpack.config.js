@@ -5,8 +5,12 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 
 if (process.env.NODE_ENV === 'test') {
+  console.log('test');
   require('dotenv').config({ path: '.env.test' });
-} else if (process.env.NODE_ENV === 'development') {
+} else if (process.env.NODE_ENV === 'production' || 'development') {
+  console.log(process.env.NODE_ENV);
+  console.log(process.env.FIREBASE_API_KEY);
+  console.log(process.env.FIREBASE_DATABASE_URL);
   require('dotenv').config({ path: '.env.development' });
 }
 
